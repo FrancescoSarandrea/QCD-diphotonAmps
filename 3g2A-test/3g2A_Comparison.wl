@@ -118,7 +118,7 @@ ampMT/phaseMT*phaseSP2 /.subs2
 ampMT/phaseMT*phaseSP2Perm /.subs2Perm
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*-++++*)
 
 
@@ -158,13 +158,6 @@ checkPS3=ampMT/phaseMT* phaseSP3 /.subs3;
 checkPS1* Conjugate[checkPS1]/60.117660741213406
 checkPS2* Conjugate[checkPS2]/108701.59807154817
 checkPS3* Conjugate[checkPS3]/249375.34214479593
-
-
-SimplifyKinematics[altspB[5,3], PSnumeric1]
-SimplifyKinematics[altspB[3,4], PSnumeric1]
-
-
-phaseMT  /.ex[i_]:>ToExpression[StringJoin["x", ToString[i]]] //CForm
 
 
 (* ::Subsubsection:: *)
@@ -242,22 +235,13 @@ checkPS5= ampMT/phaseMT*phaseSP5 /.subs5;
 SetPrecision[checkPS1*Conjugate[checkPS1]/8662.2880538179343,16]
 SetPrecision[checkPS2*Conjugate[checkPS2]/1718996.4964392409, 16]
 SetPrecision[checkPS3*Conjugate[checkPS3]/6040039.7726440653, 16]
-(*SetPrecision[checkPS4*Conjugate[checkPS4]/25320.262861295505, 16]
-SetPrecision[checkPS5*Conjugate[checkPS5]/1381219.4688844401,16]
-
-
-
-
 
 
 (* ::Subsection:: *)
 (*+++--*)
 
 
-am=-(64/(ex[1] ex[2]^2 ex[3]^2))-1/(ex[2]^3 ex[3]^2) 16 ex[1] (1+ex[2]) (1+2 ex[3]+2 ex[2] ex[3]+2 ex[3]^2+4 ex[2] ex[3]^2+2 ex[2]^2 ex[3]^2) (ex[2] ex[3]-ex[4]-ex[3] ex[4]) (ex[2] ex[3]-ex[4]-ex[3] ex[4]+ex[5]+ex[3] ex[5]) FBOX1M[topo[{{2},{4},{1},{3,5}}]]+1/(ex[2]^6 ex[3]^2) 16 ex[1] (1+ex[2]) (2+2 ex[2]+ex[2]^2+4 ex[3]+6 ex[2] ex[3]+2 ex[2]^2 ex[3]+2 ex[3]^2+4 ex[2] ex[3]^2+2 ex[2]^2 ex[3]^2) (ex[2] ex[3]-ex[4]-ex[3] ex[4]) (-ex[2] ex[3]+ex[4]+ex[3] ex[4]+ex[2] ex[3] ex[5]) FBOX1M[topo[{{2},{4},{3},{1,5}}]]-1/(ex[2]^3 ex[3]) 16 ex[1] (1+ex[3]+ex[2] ex[3]) (1+2 ex[3]+2 ex[2] ex[3]+2 ex[3]^2+4 ex[2] ex[3]^2+2 ex[2]^2 ex[3]^2) (ex[2]-ex[4]) (ex[2]-ex[4]+ex[5]) FBOX1M[topo[{{2},{5},{1},{3,4}}]]+1/(ex[2]^6 ex[3]^2) 16 ex[1] (1+ex[3]) (1+ex[3]+ex[2] ex[3]) (2+2 ex[2]+ex[2]^2+4 ex[3]+6 ex[2] ex[3]+2 ex[2]^2 ex[3]+2 ex[3]^2+4 ex[2] ex[3]^2+2 ex[2]^2 ex[3]^2) (ex[2]-ex[4]) (-ex[2]+ex[4]+ex[2] ex[5]) FBOX1M[topo[{{2},{5},{3},{1,4}}]]-1/(ex[2]^3 ex[3]^2) 16 ex[1] (1+2 ex[3]+2 ex[3]^2) (ex[2] ex[3]-ex[4]-ex[3] ex[4]+ex[5]+ex[3] ex[5]) (-ex[2] ex[3]+ex[4]+ex[3] ex[4]+ex[2] ex[3] ex[5]) FBOX1M[topo[{{3},{4},{1},{2,5}}]]-1/(ex[2]^3 ex[3]) 16 ex[1] (1+ex[3]) (1+2 ex[3]+2 ex[3]^2) (ex[2]-ex[4]+ex[5]) (-ex[2]+ex[4]+ex[2] ex[5]) FBOX1M[topo[{{3},{5},{1},{2,4}}]]+(64 (-ex[2]^2-4 ex[2]^2 ex[3]-2 ex[2]^3 ex[3]-5 ex[2]^2 ex[3]^2-5 ex[2]^3 ex[3]^2-ex[2]^4 ex[3]^2-2 ex[2]^2 ex[3]^3-3 ex[2]^3 ex[3]^3-ex[2]^4 ex[3]^3-ex[2]^2 ex[4]+3 ex[2] ex[3] ex[4]-ex[2]^2 ex[3] ex[4]-2 ex[2]^3 ex[3] ex[4]+6 ex[2] ex[3]^2 ex[4]+4 ex[2]^2 ex[3]^2 ex[4]-2 ex[2]^3 ex[3]^2 ex[4]-ex[2]^4 ex[3]^2 ex[4]+3 ex[2] ex[3]^3 ex[4]+4 ex[2]^2 ex[3]^3 ex[4]+ex[2]^3 ex[3]^3 ex[4]-ex[4]^2-ex[2] ex[4]^2-3 ex[3] ex[4]^2-3 ex[2] ex[3] ex[4]^2-3 ex[3]^2 ex[4]^2-3 ex[2] ex[3]^2 ex[4]^2-ex[3]^3 ex[4]^2-ex[2] ex[3]^3 ex[4]^2+ex[2]^2 ex[5]+4 ex[2]^2 ex[3] ex[5]+2 ex[2]^3 ex[3] ex[5]+5 ex[2]^2 ex[3]^2 ex[5]+5 ex[2]^3 ex[3]^2 ex[5]+ex[2]^4 ex[3]^2 ex[5]+2 ex[2]^2 ex[3]^3 ex[5]+3 ex[2]^3 ex[3]^3 ex[5]+ex[2]^4 ex[3]^3 ex[5]+ex[4] ex[5]+ex[2] ex[4] ex[5]+3 ex[3] ex[4] ex[5]+3 ex[2] ex[3] ex[4] ex[5]+3 ex[3]^2 ex[4] ex[5]+3 ex[2] ex[3]^2 ex[4] ex[5]+ex[3]^3 ex[4] ex[5]+ex[2] ex[3]^3 ex[4] ex[5]) Log[s[1,4]])/(ex[1] ex[2]^2 ex[3]^2 (ex[2]+ex[2] ex[3]+ex[2]^2 ex[3]-ex[4]-ex[2] ex[4]-ex[3] ex[4]-ex[2] ex[3] ex[4]) (-ex[2]-ex[2] ex[3]+ex[4]-ex[2] ex[4]+ex[3] ex[4]+ex[2] ex[5]+ex[2] ex[3] ex[5]))-(64 (-ex[2]^2 ex[3]-ex[2]^3 ex[3]-2 ex[2]^2 ex[3]^2-3 ex[2]^3 ex[3]^2-ex[2]^4 ex[3]^2+3 ex[2] ex[4]+3 ex[2]^2 ex[4]+ex[2]^3 ex[4]+6 ex[2] ex[3] ex[4]+8 ex[2]^2 ex[3] ex[4]+4 ex[2]^3 ex[3] ex[4]+ex[2]^4 ex[3] ex[4]+3 ex[2] ex[3]^2 ex[4]+4 ex[2]^2 ex[3]^2 ex[4]+ex[2]^3 ex[3]^2 ex[4]-ex[4]^2-2 ex[3] ex[4]^2-ex[2] ex[3] ex[4]^2-ex[3]^2 ex[4]^2-ex[2] ex[3]^2 ex[4]^2+ex[2]^2 ex[3] ex[5]+ex[2]^3 ex[3] ex[5]+2 ex[2]^2 ex[3]^2 ex[5]+3 ex[2]^3 ex[3]^2 ex[5]+ex[2]^4 ex[3]^2 ex[5]+ex[4] ex[5]+2 ex[3] ex[4] ex[5]+ex[2] ex[3] ex[4] ex[5]+ex[3]^2 ex[4] ex[5]+ex[2] ex[3]^2 ex[4] ex[5]) Log[s[1,5]])/(ex[1] ex[2]^2 ex[3] (ex[2] ex[3]+ex[2]^2 ex[3]-ex[4]-ex[3] ex[4]-ex[2] ex[3] ex[4]) (-ex[2] ex[3]+ex[4]+ex[2] ex[4]+ex[3] ex[4]+ex[2] ex[3] ex[5]))-(64 (1+ex[2]) (-ex[2]^3 ex[3]^3+ex[4]+2 ex[3] ex[4]-ex[2] ex[3] ex[4]+ex[3]^2 ex[4]-2 ex[2] ex[3]^2 ex[4]+ex[2]^2 ex[3]^2 ex[4]+ex[2]^3 ex[3]^2 ex[4]-ex[2] ex[3]^3 ex[4]+ex[2]^2 ex[3]^3 ex[4]+ex[4]^2+3 ex[3] ex[4]^2+3 ex[3]^2 ex[4]^2+ex[3]^3 ex[4]^2+ex[2]^3 ex[3]^3 ex[5]-ex[4] ex[5]-3 ex[3] ex[4] ex[5]-3 ex[3]^2 ex[4] ex[5]-ex[3]^3 ex[4] ex[5]) Log[s[2,4]])/(ex[1] ex[2]^3 ex[3]^2 (-1+ex[2] ex[3]-ex[4]-ex[3] ex[4]+ex[5]+ex[3] ex[5]) (-ex[2] ex[3]+ex[4]+ex[2] ex[4]+ex[3] ex[4]+ex[2] ex[3] ex[5]))+(64 (1+ex[3]+ex[2] ex[3]) (-ex[2]^3 ex[3]-ex[2]^3 ex[3]^2-ex[4]-ex[3] ex[4]-ex[2] ex[3] ex[4]+ex[2]^2 ex[3] ex[4]-ex[2]^3 ex[3] ex[4]-ex[2] ex[3]^2 ex[4]+ex[2]^2 ex[3]^2 ex[4]+ex[3] ex[4]^2+ex[3]^2 ex[4]^2+ex[2]^3 ex[3] ex[5]+ex[2]^3 ex[3]^2 ex[5]-ex[3] ex[4] ex[5]-ex[3]^2 ex[4] ex[5]) Log[s[2,5]])/(ex[1] ex[2]^3 ex[3]^2 (1+ex[2] ex[3]-ex[3] ex[4]+ex[3] ex[5]) (-ex[2]-ex[2] ex[3]+ex[4]-ex[2] ex[4]+ex[3] ex[4]+ex[2] ex[5]+ex[2] ex[3] ex[5]))+(64 (-ex[2]^3 ex[3]^3-ex[2]^4 ex[3]^3+ex[4]+ex[2] ex[4]+2 ex[3] ex[4]+5 ex[2] ex[3] ex[4]+3 ex[2]^2 ex[3] ex[4]+ex[3]^2 ex[4]+5 ex[2] ex[3]^2 ex[4]+8 ex[2]^2 ex[3]^2 ex[4]+3 ex[2]^3 ex[3]^2 ex[4]+ex[2] ex[3]^3 ex[4]+4 ex[2]^2 ex[3]^3 ex[4]+3 ex[2]^3 ex[3]^3 ex[4]-ex[3] ex[4]^2-ex[2] ex[3] ex[4]^2-2 ex[3]^2 ex[4]^2-4 ex[2] ex[3]^2 ex[4]^2-ex[2]^2 ex[3]^2 ex[4]^2-ex[3]^3 ex[4]^2-3 ex[2] ex[3]^3 ex[4]^2-2 ex[2]^2 ex[3]^3 ex[4]^2+ex[2]^3 ex[3]^3 ex[5]+ex[2]^4 ex[3]^3 ex[5]+ex[3] ex[4] ex[5]+ex[2] ex[3] ex[4] ex[5]+2 ex[3]^2 ex[4] ex[5]+4 ex[2] ex[3]^2 ex[4] ex[5]+ex[2]^2 ex[3]^2 ex[4] ex[5]+ex[3]^3 ex[4] ex[5]+3 ex[2] ex[3]^3 ex[4] ex[5]+2 ex[2]^2 ex[3]^3 ex[4] ex[5]) Log[s[3,4]])/(ex[1] ex[2]^3 ex[3]^2 (ex[2] ex[3]+ex[2]^2 ex[3]-ex[4]-ex[3] ex[4]-ex[2] ex[3] ex[4]) (1+ex[2] ex[3]-ex[3] ex[4]+ex[3] ex[5]))-(64 (1+ex[3]) (-ex[2]^3 ex[3]-ex[2]^3 ex[3]^2-ex[2]^4 ex[3]^2-ex[4]-2 ex[2] ex[4]-ex[2]^2 ex[4]-ex[3] ex[4]-2 ex[2] ex[3] ex[4]+ex[2] ex[3]^2 ex[4]+4 ex[2]^2 ex[3]^2 ex[4]+3 ex[2]^3 ex[3]^2 ex[4]-ex[4]^2-2 ex[2] ex[4]^2-ex[2]^2 ex[4]^2-2 ex[3] ex[4]^2-5 ex[2] ex[3] ex[4]^2-3 ex[2]^2 ex[3] ex[4]^2-ex[3]^2 ex[4]^2-3 ex[2] ex[3]^2 ex[4]^2-2 ex[2]^2 ex[3]^2 ex[4]^2+ex[2]^3 ex[3] ex[5]+ex[2]^3 ex[3]^2 ex[5]+ex[2]^4 ex[3]^2 ex[5]+ex[4] ex[5]+2 ex[2] ex[4] ex[5]+ex[2]^2 ex[4] ex[5]+2 ex[3] ex[4] ex[5]+5 ex[2] ex[3] ex[4] ex[5]+3 ex[2]^2 ex[3] ex[4] ex[5]+ex[3]^2 ex[4] ex[5]+3 ex[2] ex[3]^2 ex[4] ex[5]+2 ex[2]^2 ex[3]^2 ex[4] ex[5]) Log[s[3,5]])/(ex[1] ex[2]^3 ex[3]^2 (ex[2]+ex[2] ex[3]+ex[2]^2 ex[3]-ex[4]-ex[2] ex[4]-ex[3] ex[4]-ex[2] ex[3] ex[4]) (-1+ex[2] ex[3]-ex[4]-ex[3] ex[4]+ex[5]+ex[3] ex[5]));
-
-
-lz=Import["+++--.txt"] //ToExpression;
+Import["+++--.txt"] //ToExpression;
 ampMT=% /.analyticSubs;
 ampMT2= am /.Log[s_]:>MyLog[-s,mU2];
 
@@ -285,5 +269,3 @@ SetPrecision[checkPS1*Conjugate[checkPS1]/1498.0167865122278,16]
 SetPrecision[checkPS2*Conjugate[checkPS2]/1648910.9983746347, 16]
 SetPrecision[checkPS3*Conjugate[checkPS3]/4364303.8581917509, 16]
 SetPrecision[checkPS4*Conjugate[checkPS4]/261.19087827049003, 16]
-
-
